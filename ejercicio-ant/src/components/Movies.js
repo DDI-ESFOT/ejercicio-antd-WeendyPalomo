@@ -26,7 +26,6 @@ const Movies = (props) =>{
             if(search !== ''){
                 const response = await fetch(`http://www.omdbapi.com/?apikey=96bcab50&s=${search}`);
                 const data = await response.json();
-                console.log('MOVIES', data);
                 setMovies(data.Search);
             }
         };
@@ -39,7 +38,6 @@ const Movies = (props) =>{
             if(currentMovieId) {
                 const response = await fetch(`http://www.omdbapi.com/?apikey=96bcab50&i=${currentMovieId}`);
                 const data = await response.json();
-                console.log('MOVIE DETAILS', data);
                 setMovieDetails(data);
                 setShowModal(true);
             }
@@ -53,7 +51,6 @@ const Movies = (props) =>{
     }
 
     const handleSearchMovie = (values)=>{
-        console.log('form values',values);
         setSearh(values.searchText)
     };
 
